@@ -10,13 +10,14 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'pip install -r requirements.txt'
+                bat '"C:\\Users\\thaku\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" -m pip install --upgrade pip'
+                bat '"C:\\Users\\thaku\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" -m pip install -r requirements.txt'
             }
         }
 
         stage('Run Flask App') {
             steps {
-                bat 'python app.py'
+                bat '"C:\\Users\\thaku\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" app.py'
             }
         }
     }
