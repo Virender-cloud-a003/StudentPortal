@@ -7,24 +7,46 @@
 </head>
 <body>
 
-  <div class="login-container">
-    <div class="login-card">
-      <h2>🎓 Student Portal</h2>
-      <p class="subtitle">Login to Continue</p>
-      <form>
-        <div class="input-box">
-          <input type="email" id="email" required>
-          <label for="email">Email</label>
-        </div>
-        <div class="input-box">
-          <input type="password" id="password" required>
-          <label for="password">Password</label>
-        </div>
-        <button type="submit" class="btn">Login</button>
-      </form>
-      <p class="footer-text">Built by <strong>Virender</strong> | Automated via Jenkins CI/CD</p>
+  <div class="background">
+    <div class="login-container">
+      <div class="login-card">
+        <h2>🎓 Student Portal</h2>
+        <p class="subtitle">Welcome back! Please login to continue</p>
+
+        <form>
+          <div class="input-box">
+            <input type="email" id="email" required>
+            <label for="email">Email</label>
+          </div>
+
+          <div class="input-box password-box">
+            <input type="password" id="password" required>
+            <label for="password">Password</label>
+            <span id="togglePassword" class="eye">👁️</span>
+          </div>
+
+          <button type="submit" class="btn">Login</button>
+        </form>
+
+        <p class="footer-text">
+          Built by <strong>Virender</strong> <br>
+          <small>Automated via Jenkins CI/CD Pipeline</small>
+        </p>
+      </div>
     </div>
   </div>
+
+  <script>
+    // Show/Hide Password Toggle
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordField = document.getElementById('password');
+
+    togglePassword.addEventListener('click', function() {
+      const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordField.setAttribute('type', type);
+      this.textContent = type === 'password' ? '👁️' : '🙈';
+    });
+  </script>
 
 </body>
 </html>
