@@ -1,0 +1,117 @@
+/* Reset and background */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #74ABE2, #5563DE);
+  animation: gradientShift 6s infinite alternate;
+}
+
+@keyframes gradientShift {
+  0% { background: linear-gradient(135deg, #74ABE2, #5563DE); }
+  100% { background: linear-gradient(135deg, #4ECDC4, #5563DE); }
+}
+
+/* Login card */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-card {
+  background: #ffffffdd;
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 40px 50px;
+  width: 350px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.login-card h2 {
+  color: #2c3e50;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #7f8c8d;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+/* Input box animation */
+.input-box {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 10px 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: transparent;
+  outline: none;
+  color: #333;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.input-box label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #777;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -10px;
+  left: 5px;
+  color: #5563DE;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.input-box input:focus {
+  border-color: #5563DE;
+}
+
+/* Button */
+.btn {
+  background: #5563DE;
+  color: white;
+  padding: 10px 0;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #3e4bb7;
+}
+
+/* Footer text */
+.footer-text {
+  margin-top: 20px;
+  color: #555;
+  font-size: 13px;
+  font-weight: 400;
+}
